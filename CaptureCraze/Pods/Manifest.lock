@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.4.4)
+  - AnyCodable-FlightSchool (0.6.7)
+  - ApiVideoClient (1.1.1):
+    - Alamofire (~> 5.4.3)
+    - AnyCodable-FlightSchool (~> 0.6.1)
+
+DEPENDENCIES:
+  - ApiVideoClient
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AnyCodable-FlightSchool
+    - ApiVideoClient
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  AnyCodable-FlightSchool: 261cbe76757802b17d471b9059b21e6fa5edf57b
+  ApiVideoClient: a684821352907be730da26679bec17a35b795dfa
+
+PODFILE CHECKSUM: 78f0c3738de084af4065b201dd7ba0e72a936765
+
+COCOAPODS: 1.11.3

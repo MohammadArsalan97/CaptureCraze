@@ -1,0 +1,6 @@
+framework module ApiVideoClient {
+  umbrella header "ApiVideoClient-umbrella.h"
+
+  export *
+  module * { export * }
+}

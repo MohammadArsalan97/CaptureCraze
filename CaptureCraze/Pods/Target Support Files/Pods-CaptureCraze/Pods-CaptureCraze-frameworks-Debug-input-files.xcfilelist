@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-CaptureCraze/Pods-CaptureCraze-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AnyCodable-FlightSchool/AnyCodable.framework
+${BUILT_PRODUCTS_DIR}/ApiVideoClient/ApiVideoClient.framework

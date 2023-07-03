@@ -7,21 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		889D89E32A48CE5E00D060E8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889D89E22A48CE5E00D060E8 /* HomeView.swift */; };
+		65669FBEE1C39E12F78D1609 /* Pods_CaptureCraze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3470948C895D00AF59A99C /* Pods_CaptureCraze.framework */; };
+		887B36982A4A29FE001C1EFE /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B36972A4A29FE001C1EFE /* CameraView.swift */; };
+		887B369A2A4A2A37001C1EFE /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B36992A4A2A37001C1EFE /* VideoListView.swift */; };
+		887B369D2A4A2E86001C1EFE /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B369C2A4A2E86001C1EFE /* Video.swift */; };
+		887B36A02A4A2F69001C1EFE /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B369F2A4A2F69001C1EFE /* View+Extension.swift */; };
+		887B36A32A4A2FC6001C1EFE /* NavigationBarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887B36A22A4A2FC6001C1EFE /* NavigationBarTitle.swift */; };
 		889D89E52A48CE6000D060E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 889D89E42A48CE6000D060E8 /* Assets.xcassets */; };
 		889D89E82A48CE6000D060E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 889D89E72A48CE6000D060E8 /* Preview Assets.xcassets */; };
 		889D8A132A48D5DE00D060E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889D8A122A48D5DE00D060E8 /* AppDelegate.swift */; };
 		889D8A152A48D5FB00D060E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889D8A142A48D5FB00D060E8 /* SceneDelegate.swift */; };
+		88A659DC2A51DA9900D65CC3 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A659DB2A51DA9900D65CC3 /* CameraViewModel.swift */; };
+		88A659DE2A51E91700D65CC3 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A659DD2A51E91700D65CC3 /* URL+Extension.swift */; };
+		88A659E02A51EFAB00D65CC3 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A659DF2A51EFAB00D65CC3 /* VideoPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C1B65A87CFEAEAC728BDC62 /* Pods-CaptureCraze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaptureCraze.debug.xcconfig"; path = "Target Support Files/Pods-CaptureCraze/Pods-CaptureCraze.debug.xcconfig"; sourceTree = "<group>"; };
+		887B36972A4A29FE001C1EFE /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		887B36992A4A2A37001C1EFE /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
+		887B369C2A4A2E86001C1EFE /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		887B369F2A4A2F69001C1EFE /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		887B36A22A4A2FC6001C1EFE /* NavigationBarTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitle.swift; sourceTree = "<group>"; };
 		889D89DD2A48CE5E00D060E8 /* CaptureCraze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaptureCraze.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		889D89E22A48CE5E00D060E8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		889D89E42A48CE6000D060E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		889D89E72A48CE6000D060E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		889D8A122A48D5DE00D060E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		889D8A142A48D5FB00D060E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		889D8A162A48D66300D060E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		88A659DB2A51DA9900D65CC3 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		88A659DD2A51E91700D65CC3 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		88A659DF2A51EFAB00D65CC3 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		9EB54AB277F506DD2001ED5A /* Pods-CaptureCraze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaptureCraze.release.xcconfig"; path = "Target Support Files/Pods-CaptureCraze/Pods-CaptureCraze.release.xcconfig"; sourceTree = "<group>"; };
+		BF3470948C895D00AF59A99C /* Pods_CaptureCraze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaptureCraze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +47,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65669FBEE1C39E12F78D1609 /* Pods_CaptureCraze.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		782D45E6EEE7C6D279DC6C81 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C1B65A87CFEAEAC728BDC62 /* Pods-CaptureCraze.debug.xcconfig */,
+				9EB54AB277F506DD2001ED5A /* Pods-CaptureCraze.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		887B369B2A4A2E77001C1EFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				887B369C2A4A2E86001C1EFE /* Video.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		887B369E2A4A2F44001C1EFE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				887B369F2A4A2F69001C1EFE /* View+Extension.swift */,
+				88A659DD2A51E91700D65CC3 /* URL+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		887B36A12A4A2F85001C1EFE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				887B36A22A4A2FC6001C1EFE /* NavigationBarTitle.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		889D89D42A48CE5E00D060E8 = {
 			isa = PBXGroup;
 			children = (
 				889D89DF2A48CE5E00D060E8 /* CaptureCraze */,
 				889D89DE2A48CE5E00D060E8 /* Products */,
+				782D45E6EEE7C6D279DC6C81 /* Pods */,
+				C494B6731843894B93076487 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +109,10 @@
 		889D89DF2A48CE5E00D060E8 /* CaptureCraze */ = {
 			isa = PBXGroup;
 			children = (
+				88A659DA2A51DA8300D65CC3 /* ViewModel */,
+				887B36A12A4A2F85001C1EFE /* Helpers */,
+				887B369E2A4A2F44001C1EFE /* Extensions */,
+				887B369B2A4A2E77001C1EFE /* Models */,
 				889D8A1B2A48DB2F00D060E8 /* Resources */,
 				889D8A1A2A48DAFB00D060E8 /* Supporting Files */,
 				889D8A192A48DAF400D060E8 /* Views */,
@@ -74,7 +133,9 @@
 		889D8A192A48DAF400D060E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				889D89E22A48CE5E00D060E8 /* HomeView.swift */,
+				887B36972A4A29FE001C1EFE /* CameraView.swift */,
+				887B36992A4A2A37001C1EFE /* VideoListView.swift */,
+				88A659DF2A51EFAB00D65CC3 /* VideoPlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +157,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		88A659DA2A51DA8300D65CC3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				88A659DB2A51DA9900D65CC3 /* CameraViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C494B6731843894B93076487 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF3470948C895D00AF59A99C /* Pods_CaptureCraze.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 889D89EB2A48CE6000D060E8 /* Build configuration list for PBXNativeTarget "CaptureCraze" */;
 			buildPhases = (
+				1F9BAA7C8BF7C1CD30942813 /* [CP] Check Pods Manifest.lock */,
 				889D89D92A48CE5E00D060E8 /* Sources */,
 				889D89DA2A48CE5E00D060E8 /* Frameworks */,
 				889D89DB2A48CE5E00D060E8 /* Resources */,
+				C3C457A33D4395FAE0EF1CCA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,14 +240,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F9BAA7C8BF7C1CD30942813 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CaptureCraze-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3C457A33D4395FAE0EF1CCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CaptureCraze/Pods-CaptureCraze-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CaptureCraze/Pods-CaptureCraze-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CaptureCraze/Pods-CaptureCraze-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		889D89D92A48CE5E00D060E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				889D89E32A48CE5E00D060E8 /* HomeView.swift in Sources */,
+				887B369A2A4A2A37001C1EFE /* VideoListView.swift in Sources */,
+				887B369D2A4A2E86001C1EFE /* Video.swift in Sources */,
+				887B36A32A4A2FC6001C1EFE /* NavigationBarTitle.swift in Sources */,
 				889D8A132A48D5DE00D060E8 /* AppDelegate.swift in Sources */,
 				889D8A152A48D5FB00D060E8 /* SceneDelegate.swift in Sources */,
+				88A659DE2A51E91700D65CC3 /* URL+Extension.swift in Sources */,
+				88A659DC2A51DA9900D65CC3 /* CameraViewModel.swift in Sources */,
+				887B36A02A4A2F69001C1EFE /* View+Extension.swift in Sources */,
+				887B36982A4A29FE001C1EFE /* CameraView.swift in Sources */,
+				88A659E02A51EFAB00D65CC3 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,12 +419,15 @@
 		};
 		889D89EC2A48CE6000D060E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C1B65A87CFEAEAC728BDC62 /* Pods-CaptureCraze.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CaptureCraze/Preview Content\"";
+				DEVELOPMENT_TEAM = 8KF46UL5SB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CaptureCraze/Info.plist;
@@ -312,6 +443,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CaptureCraze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -320,12 +452,15 @@
 		};
 		889D89ED2A48CE6000D060E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EB54AB277F506DD2001ED5A /* Pods-CaptureCraze.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CaptureCraze/Preview Content\"";
+				DEVELOPMENT_TEAM = 8KF46UL5SB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CaptureCraze/Info.plist;
@@ -341,6 +476,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CaptureCraze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
