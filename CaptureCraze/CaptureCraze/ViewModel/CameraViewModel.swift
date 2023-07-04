@@ -6,12 +6,14 @@
 //
 
 import AVFoundation
+import ApiVideoClient
 
 class CameraViewModel: NSObject, ObservableObject {
     @Published var isRecording: Bool = false
     @Published var recordedURL: URL?
     
     @Published var alert: Bool = false
+    @Published var errorAlert: Bool = false
     @Published var uploadVideoAlert: Bool = false
     @Published var session = AVCaptureSession()
     
@@ -27,6 +29,17 @@ class CameraViewModel: NSObject, ObservableObject {
     @Published var timerString = "00:00"
     @Published var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @Published var startTime =  Date()
+    
+    @Published var videos: [Video] = []
+    
+    @Published var isLoading: Bool = false
+    
+    @Published var progress = Progress(totalUnitCount: 100)
+    @Published var isUploading: Bool = false
+    
+    @Published var errorMessage: String = ""
+    
+    let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String
     
     func startTimer() {
             self.timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -117,7 +130,7 @@ class CameraViewModel: NSObject, ObservableObject {
         output.stopRecording()
         isRecording = false
         uploadVideoAlert = true
-        
+        timerString = "00:00"
         self.stopTimer()
     }
 }
@@ -130,5 +143,85 @@ extension CameraViewModel: AVCaptureFileOutputRecordingDelegate {
         }
         debugPrint(outputFileURL)
         previewURL = outputFileURL
+    }
+}
+
+extension CameraViewModel {
+    
+    func upload(url: URL) {
+        
+        if let apiKey = apiKey {
+            ApiVideoClient.apiKey = apiKey
+        }
+        
+        VideosAPI.create(videoCreationPayload: VideoCreationPayload(title: "\(Date())")) { video, error in
+            if let video = video {
+                do {
+                    try VideosAPI.upload(
+                            videoId: video.videoId,
+                            file: url,
+                            onProgressReady: { progres in
+                                
+                                self.isUploading = true
+                                self.progress = progres
+                                if progres.completedUnitCount == progres.totalUnitCount {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                        self.isUploading = false
+                                    }
+                                }
+                                
+                            }) { video, error in
+                        if let error = error {
+                            self.errorMessage = "Upload error: \(error.localizedDescription)"
+                            self.errorAlert = true
+                        }
+                    }
+                } catch {
+                    self.errorMessage = "Upload error: \(error.localizedDescription)"
+                    self.errorAlert = true
+                    
+                }
+            }
+            if let error = error {
+                self.errorMessage = "Create error: \(error.localizedDescription)"
+                self.errorAlert = true
+            }
+        }
+    }
+    
+    func fetchVideos(){
+        isLoading = true
+        videos.removeAll()
+        
+        if let apiKey = apiKey {
+            ApiVideoClient.apiKey = apiKey
+        }
+        
+        VideosAPI.list(title: nil,
+                       tags: nil,
+                       metadata: nil,
+                       description: nil,
+                       liveStreamId: nil,
+                       sortBy: nil,
+                       sortOrder: nil,
+                       currentPage: nil,
+                       pageSize: nil) { (response, error) in
+            self.isLoading = false
+            guard error == nil else {
+                print(error ?? "error")
+                return
+            }
+            if let response = response {
+                for video in response.data {
+                    self.videos.append(
+                        Video(title: video.title ?? "Error!",
+                              videoId: video.videoId,
+                              createdAt: video.createdAt ?? Date(),
+                              thumbnail: video.assets?.thumbnail,
+                              url: video.assets?.mp4)
+                    )
+                }
+            }
+        }
     }
 }

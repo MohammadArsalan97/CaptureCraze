@@ -6,53 +6,63 @@
 //
 
 import SwiftUI
+import ApiVideoClient
+import Kingfisher
 
 struct VideoListView: View {
+    
     @State private var showCamera = false
     @StateObject var viewModel = CameraViewModel()
     
-    let videos: [Video] = [
-        //            Video(title: "Video 1", size: "100 MB", thumbnail: "video1_thumbnail"),
-        //            Video(title: "Video 2", size: "75 MB", thumbnail: "video2_thumbnail"),
-        //            Video(title: "Video 3", size: "120 MB", thumbnail: "video3_thumbnail"),
-    ]
+    
     
     var body: some View {
         NavigationView {
             
-            
-            VStack {
-                if videos.isEmpty {
-                    Text("No Videos!")
+            ZStack{
+                VStack {
+                    if viewModel.videos.isEmpty && !viewModel.isLoading {
+                        Text("No Videos!")
                         
-                } else {
-                    List(videos) { video in
-                        HStack {
-                            Image(video.thumbnail)
-                                .resizable()
-                                .frame(width: 80, height: 60)
-                            
-                            VStack(alignment: .leading) {
-                                Text(video.title)
-                                    .font(.headline)
-                                Text("Size: \(video.size)")
-                                    .font(.subheadline)
+                    } else {
+                        List(viewModel.videos) { video in
+                            NavigationLink {
+                                if let url = video.url {
+                                    VideoPlayerView(url: URL(string: url)!)
+                                }
+                            } label: {
+                                VideoView(video: video)
                             }
                         }
                     }
+                    
+                    NavigationLink(isActive: $showCamera) {
+                        CameraView()
+                            .environmentObject(viewModel)
+                    } label: {
+                        EmptyView()
+                    }
+                }
+                .onAppear(perform: {
+                    viewModel.fetchVideos()
+                })
+                .navigationBar(title: "Capture Craze") {
+                    showCamera.toggle()
                 }
                 
-                NavigationLink(isActive: $showCamera) {
-                    CameraView()
-                        .environmentObject(viewModel)
-                } label: {
-                    EmptyView()
-                }
+//                VStack {
+//                    Text("Loading")
+//
+//                }
+                ActivityIndicator(isAnimating: $viewModel.isLoading, style: .large)
+//                .frame(width: 150,
+//                       height: 150)
+//                .background(Color.secondary.colorInvert())
+//                .foregroundColor(Color.primary)
+//                .cornerRadius(20)
+//                .opacity(self.isShowing ? 1 : 0)
             }
-            .navigationBar(title: "Capture Craze") {
-                print("Tapped On Camera...")
-                showCamera.toggle()
-            }
+            
         }
     }
 }
@@ -60,5 +70,37 @@ struct VideoListView: View {
 struct VideoListView_Previews: PreviewProvider {
     static var previews: some View {
         VideoListView()
+    }
+}
+
+extension VideoListView {
+    
+    
+    struct VideoView: View {
+        var video: Video
+        
+        var body: some View {
+            HStack {
+                if let thumbnail = video.thumbnail {
+                    
+                    KFImage.url(URL(string: thumbnail))
+                    
+                        .resizable()
+                        .frame(width: 80, height: 60)
+                        .cornerRadius(10)
+                } else {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .frame(width: 80, height: 60)
+                        .cornerRadius(10)
+                }
+                VStack(alignment: .leading) {
+                    Text(video.title)
+                        .font(.headline)
+                    Text("Created At: \(video.formattedDate)")
+                        .font(.caption)
+                }
+            }
+        }
     }
 }

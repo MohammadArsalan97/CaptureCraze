@@ -27,6 +27,9 @@ struct CameraView: View {
             }
             
             VStack(spacing: 10) {
+                if cameraModel.isUploading {
+                    ProgressBar(progress: $cameraModel.progress)
+                }
                 Spacer()
                 Text(cameraModel.timerString)
                     .onReceive(cameraModel.timer) { _ in
@@ -37,7 +40,7 @@ struct CameraView: View {
                     
                     NavigationLink(isActive: $cameraModel.showPreview) {
                         if let url = cameraModel.previewURL {
-                            VideoPlayerView(url: url, showPreview: $cameraModel.showPreview)
+                            VideoPlayerView(url: url)
                         }
                     } label: {
                         EmptyView()
@@ -45,7 +48,6 @@ struct CameraView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Button {
-                        // Show Preview
                         cameraModel.showPreview = true
                     } label: {
                         if let url = cameraModel.previewURL, let thumbnail = url.generateThumbnail() {
@@ -75,12 +77,19 @@ struct CameraView: View {
                             .frame(width: 60, height: 60)
                             .foregroundColor(.white)
                     }
+                    .alert(isPresented: $cameraModel.errorAlert) {
+                        Alert(title: Text("\(cameraModel.errorMessage)"))
+                    }
                     .actionSheet(isPresented: $cameraModel.uploadVideoAlert) {
                         ActionSheet(
                             title: Text("Are you sure you want to upload this video!"),
                             buttons: [
                                 .default(Text("Upload")) {
-                                    /// Upload Video From Here.......
+                                    
+                                    if let url = cameraModel.previewURL {
+                                        cameraModel.upload(url: url)
+                                    }
+                                    
                                 },
                                 .destructive(Text("Cancel"))
                             ]

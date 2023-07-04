@@ -11,7 +11,7 @@ import AVKit
 struct VideoPlayerView: View {
 
     var url: URL
-    @Binding var showPreview: Bool
+//    @Binding var showPreview: Bool
     var body: some View {
         GeometryReader { proxy in
             let size = proxy.size
@@ -25,7 +25,7 @@ struct VideoPlayerView: View {
 
 struct VideoPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoPlayerView(url: URL(fileURLWithPath: ""), showPreview: .constant(false))
+        VideoPlayerView(url: URL(fileURLWithPath: ""))
     }
 }
 
